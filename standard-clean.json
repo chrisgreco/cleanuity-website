@@ -1,0 +1,15 @@
+{
+  "name": "Standard Clean",
+  "price": 149,
+  "unit": "/clean",
+  "popular": false,
+  "description": "Perfect for regular maintenance cleaning of your home.",
+  "features": [
+    "Up to 1,500 sq ft",
+    "Dusting all surfaces",
+    "Vacuuming and mopping floors",
+    "Bathroom cleaning",
+    "Kitchen cleaning",
+    "Bed making"
+  ]
+}

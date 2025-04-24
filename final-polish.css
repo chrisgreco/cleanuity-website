@@ -1,0 +1,489 @@
+/* Final UX Polish Styles */
+
+/* Global Refinements */
+:root {
+  --primary-color: #1AACA0;
+  --primary-dark: #159b90;
+  --primary-light: rgba(26, 172, 160, 0.1);
+  --secondary-color: #333333;
+  --accent-color: #FFD700;
+  --text-color: #333333;
+  --text-light: #666666;
+  --bg-light: #f9f9f9;
+  --bg-white: #ffffff;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* Improved Button Styles */
+.btn, 
+.hero-cta, 
+.confirm-booking-btn,
+.confirm-booking-btn-sidebar,
+.next-step-btn,
+.prev-step-btn {
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.btn:after, 
+.hero-cta:after, 
+.confirm-booking-btn:after,
+.confirm-booking-btn-sidebar:after,
+.next-step-btn:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.btn:focus:not(:active)::after, 
+.hero-cta:focus:not(:active)::after, 
+.confirm-booking-btn:focus:not(:active)::after,
+.confirm-booking-btn-sidebar:focus:not(:active)::after,
+.next-step-btn:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+/* Enhanced Navigation */
+.header-container {
+  position: relative;
+}
+
+.book-btn {
+  position: relative;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(26, 172, 160, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(26, 172, 160, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(26, 172, 160, 0);
+  }
+}
+
+/* Improved Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+  transition: var(--transition);
+  border: 1px solid #ddd;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(26, 172, 160, 0.2);
+  outline: none;
+}
+
+/* Enhanced Service Tiles */
+.service-tile {
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.service-tile:hover {
+  transform: translateY(-5px);
+}
+
+.service-tile.active {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Improved Add-on Items */
+.addon-item {
+  transition: var(--transition);
+}
+
+.addon-item:hover {
+  background-color: var(--primary-light);
+}
+
+/* Enhanced Toggle Switch */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Enhanced Calendar */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.calendar-day:hover {
+  background-color: var(--primary-light);
+}
+
+.calendar-day.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Enhanced Time Slots */
+.time-slot {
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.time-slot:hover {
+  background-color: var(--primary-light);
+}
+
+.time-slot.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.time-slot.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Improved Booking Summary */
+.booking-summary {
+  position: sticky;
+  top: 20px;
+}
+
+/* Enhanced Confirmation Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: var(--bg-white);
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.confirmation-icon {
+  font-size: 60px;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 20px 0;
+  animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+/* Enhanced Mobile Experience */
+@media (max-width: 768px) {
+  .booking-content {
+    flex-direction: column;
+  }
+  
+  .booking-sidebar {
+    position: static;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bg-white);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .mobile-cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border-radius: var(--radius-md);
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .mobile-cta-btn:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  /* Add padding to bottom of page to account for fixed CTA */
+  body {
+    padding-bottom: 70px;
+  }
+}
+
+/* Accessibility Improvements */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Loading States */
+.loading {
+  position: relative;
+}
+
+.loading:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(26, 172, 160, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Favicon */
+link[rel="icon"] {
+  display: block;
+}
+
+/* Payment Method Icons */
+.payment-icon {
+  height: 30px;
+  margin: 0 5px;
+  transition: var(--transition);
+}
+
+.payment-icon:hover {
+  transform: translateY(-2px);
+}
+
+/* Apple Pay / Google Pay Buttons */
+.wallet-payment-methods {
+  margin: 20px 0;
+  display: none;
+}
+
+.apple-pay-badge,
+.google-pay-badge {
+  display: none;
+  height: 30px;
+  margin: 0 5px;
+}
+
+#payment-request-button {
+  margin: 20px 0;
+}
+
+/* Enhanced Photo Verification */
+.photo-comparison {
+  position: relative;
+}
+
+.photo-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.photo-container img {
+  transition: transform 0.3s ease;
+}
+
+.photo-container:hover img {
+  transform: scale(1.05);
+}
+
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Final Touches */
+::selection {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease;
+}
+
+.bounce {
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}

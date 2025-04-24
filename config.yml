@@ -1,0 +1,83 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/home.json"
+        fields:
+          - {label: "Hero Title", name: "heroTitle", widget: "string"}
+          - {label: "Hero Description", name: "heroDescription", widget: "text"}
+          - {label: "Features Section Title", name: "featuresTitle", widget: "string"}
+          - {label: "Features Description", name: "featuresDescription", widget: "text"}
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Icon", name: "icon", widget: "string", required: false}
+          - {label: "How It Works Title", name: "howItWorksTitle", widget: "string"}
+          - {label: "How It Works Description", name: "howItWorksDescription", widget: "text"}
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - {label: "Step Number", name: "number", widget: "number"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+  
+  - name: "cleaners"
+    label: "Cleaners"
+    folder: "content/cleaners"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Rating", name: "rating", widget: "number", min: 1, max: 5, step: 0.1}
+      - {label: "Reviews Count", name: "reviewsCount", widget: "number"}
+      - {label: "Specialty", name: "specialty", widget: "string"}
+      - {label: "Bio", name: "bio", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+  
+  - name: "pricing"
+    label: "Pricing"
+    folder: "content/pricing"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Plan Name", name: "name", widget: "string"}
+      - {label: "Price", name: "price", widget: "number"}
+      - {label: "Unit", name: "unit", widget: "string", default: "/clean"}
+      - {label: "Popular", name: "popular", widget: "boolean", default: false}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        field: {label: "Feature", name: "feature", widget: "string"}
+  
+  - name: "addons"
+    label: "Add-ons"
+    folder: "content/addons"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Price", name: "price", widget: "number"}
+      - {label: "Description", name: "description", widget: "text"}
+  
+  - name: "faq"
+    label: "FAQ"
+    folder: "content/faq"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Question", name: "question", widget: "string"}
+      - {label: "Answer", name: "answer", widget: "text"}

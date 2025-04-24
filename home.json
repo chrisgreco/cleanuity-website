@@ -1,0 +1,72 @@
+{
+  "heroTitle": "Premium Cleaning for Busy New Yorkers",
+  "heroDescription": "From effortless online booking to personalized cleaner profiles, Cleanuity pairs every home with carefully vetted professionals and offers the option to rebook your favorite cleaner with just one click.",
+  "featuresTitle": "Why Choose Cleanuity",
+  "featuresDescription": "We combine thoughtful technology with white-glove execution to take the guesswork out of home cleaning.",
+  "features": [
+    {
+      "title": "Auto-Rebook",
+      "description": "Schedule recurring cleanings with your favorite cleaner and confirm with just one click, similar to Amazon Subscribe & Save.",
+      "icon": "refresh"
+    },
+    {
+      "title": "Cleaner Profiles",
+      "description": "Browse detailed cleaner profiles with stats, ratings, and specialties to find the perfect match for your home.",
+      "icon": "user-check"
+    },
+    {
+      "title": "Real-Time Tracking",
+      "description": "Track your cleaner's arrival with Uber Eats-style ETA updates, so you're never left wondering when they'll arrive.",
+      "icon": "map-pin"
+    },
+    {
+      "title": "Photo Verification",
+      "description": "Receive photo verification of completed cleans, perfect for remote homeowners or Airbnb hosts.",
+      "icon": "camera"
+    },
+    {
+      "title": "Smart Home Integration",
+      "description": "Seamlessly integrate with Amazon Key, SmartThings, and other keyless entry systems for secure access.",
+      "icon": "home"
+    },
+    {
+      "title": "Trusted Professionals",
+      "description": "All cleaners undergo rigorous background checks and training to ensure the highest quality service.",
+      "icon": "shield"
+    }
+  ],
+  "howItWorksTitle": "How It Works",
+  "howItWorksDescription": "Booking a cleaning with Cleanuity is simple and hassle-free.",
+  "steps": [
+    {
+      "number": 1,
+      "title": "Book Online",
+      "description": "Select your preferred date, time, and cleaning options through our easy-to-use booking system."
+    },
+    {
+      "number": 2,
+      "title": "Choose Your Cleaner",
+      "description": "Browse cleaner profiles and select the professional that best matches your needs."
+    },
+    {
+      "number": 3,
+      "title": "Track Arrival",
+      "description": "Receive real-time updates as your cleaner approaches your home."
+    },
+    {
+      "number": 4,
+      "title": "Enjoy a Clean Home",
+      "description": "Your cleaner will thoroughly clean your home according to your specifications."
+    },
+    {
+      "number": 5,
+      "title": "Verify Results",
+      "description": "Receive photo verification of the completed cleaning for your peace of mind."
+    },
+    {
+      "number": 6,
+      "title": "One-Click Rebook",
+      "description": "Easily schedule your next cleaning with your favorite cleaner in just one click."
+    }
+  ]
+}
